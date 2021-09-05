@@ -8,6 +8,12 @@ docker-compose build
 ```
 docker-compose up -d
 ```
+### Dockerコンテナの作成と起動
+```
+run -p 8000:8000 --name webrick sample/webrick:latest
+```
+- -pはローカルのポートの指定をしている
+- ローカルの8000番ポートをDockerの8000番ポートに接続させている
 
 ### Docker コンテナ内でコマンドを実行する
 ```
