@@ -92,3 +92,9 @@ docker-compose ps
 ```
 docker conatainer exec コンテナ名　(ruby -v)
 ```
+### 使っていないimageのお掃除をしてくれる
+```
+Docker system prune -a
+```
+-aは全てのというオプション<br>
+個別で消すと時間がかかる
