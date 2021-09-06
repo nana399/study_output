@@ -34,6 +34,8 @@ docker-compose ps
 ```
 docker-compose logs app
 ```
+appの部分はファイル名を書く<br>
+正確にはコンテナ名
 
 ### コンテナ内で bash を操作する（コンテナ起動中のみ）
 ```
@@ -85,4 +87,8 @@ docker-compose up -d
 ```
 docker-compose ps
 ```
+### Dockerコンテナ起動中に別のコマンドを使用したいとき
 
+```
+docker conatainer exec コンテナ名　(ruby -v)
+```
