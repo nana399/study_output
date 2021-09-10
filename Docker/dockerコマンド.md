@@ -26,9 +26,7 @@ docker-compose down
 ```
 # ■ Docker でよく使うコマンド
 ### コンテナの一覧と起動状態を確認する
-```
-docker-compose ps
-```
+
 
 ### ログを確認する
 ```
@@ -57,10 +55,6 @@ docker-compose logs db
 ```
 対応したらコンテナを起動。
 
-### Docker コンテナの起動
-```
-docker-compose up -d
-```
 
 ### コンテナの起動状態を確認する
 ```
@@ -98,3 +92,9 @@ Docker system prune -a
 ```
 -aは全てのというオプション<br>
 個別で消すと時間がかかる
+
+## Docker環境でのrailsのルーティング確認方法
+```
+docker-compose run web bundle exec rake routes
+```
+
