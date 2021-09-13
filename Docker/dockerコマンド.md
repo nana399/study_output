@@ -1,7 +1,7 @@
 # ■ 環境構築
 ### Docker イメージのビルド
 ```
-docker-compose build
+docker-compose build　
 ```
 
 ### Docker コンテナの起動
@@ -43,10 +43,11 @@ Docker で困ったら<br>
 コンテナがうまく起動しないとき<br>
 下記のコマンドでログを確認して、ログに合わせて対応。
 
-### コンテナの起動状態を確認する
+### コンテナの一覧を表示する
 ```
 docker-compose ps
 ```
+コンテナの一覧を表示する
 
 ### 起動していないコンテナのログを確認する
 ```
@@ -81,11 +82,17 @@ docker-compose up -d
 ```
 docker-compose ps
 ```
-### Dockerコンテナ起動中に別のコマンドを使用したいとき
+
+### コンテナを作成してコマンド実行
+```
+docker-compose run ＜サービス＞＜コマンド＞
+```
+### 起動中のコンテナにコマンド実行
 
 ```
-docker conatainer exec コンテナ名　(ruby -v)
+docker conatainer exec ＜サービス＞　＜コマンド＞
 ```
+コマンド例　ruby -v
 ### 使っていないimageのお掃除をしてくれる
 ```
 Docker system prune -a
