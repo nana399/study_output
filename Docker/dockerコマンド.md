@@ -25,7 +25,11 @@ docker-compose exec app php -v
 docker-compose down
 ```
 # ■ Docker でよく使うコマンド
-### コンテナの一覧と起動状態を確認する
+### コンソール開いておいてその中でコマンド操作
+```
+docker-compose run app bash
+```
+
 
 
 ### ログを確認する
