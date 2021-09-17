@@ -8,14 +8,14 @@ git stash [実行コマンド]
 ```
 
 ## 「git stash save」
-
+作業中のファイルを保存する
 ```
 $ git stash save "任意のメッセージ"　
 （例）　$ git stash save "一時退避"
 ```
 
 ## 「git stash list」で退避できているかの確認
-
+保存したリストを確認する<br>
 実行時には以下のように情報が出力される。
 ```
 「stash@{番号}」: On 「ブランチ名」: 「メッセージ」
@@ -62,9 +62,12 @@ git diff stash@{0} ファイル名
 ```
 
 # applyとdropを同時に!「git stash pop」
-`stash popコマンド`を使用することで`apply`と`rop`コマンドを同時に行うことができる。
+`stash popコマンド`を使用することで`apply`と`drop`コマンドを同時に行うことができる。
 
 ```
 git stash pop stash@{0}
 ```
 これをすることで、復旧と削除が同時に行える。
+
+# 参考サイト
+- [変更を一時的に退避しよう!git stashを使いこなす5つのステップ](https://www.sejuku.net/blog/71428)
