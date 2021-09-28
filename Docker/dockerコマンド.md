@@ -24,6 +24,12 @@ docker-compose exec app php -v
 ```
 docker-compose down
 ```
+
+### Docker　コンテナの起動
+```
+docker-compose up
+```
+→これをすると全部のファイルを起動する
 # ■ Docker でよく使うコマンド
 ### コンソール開いておいてその中でコマンド操作
 ```
@@ -107,5 +113,10 @@ Docker system prune -a
 ## Docker環境でのrailsのルーティング確認方法
 ```
 docker-compose run web bundle exec rake routes
+```
+
+マイグレーションのやり直し
+```
+$ docker-compose run app bundle exec rails db:migrate:reset
 ```
 
