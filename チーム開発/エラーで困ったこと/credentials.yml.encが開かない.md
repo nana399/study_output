@@ -97,7 +97,7 @@ ERROR: 1
 
 このコマンドから、
 `ActiveSupport::MessageEncryptor::InvalidMessage (ActiveSupport::MessageEncryptor::InvalidMessage)`といったエラーと、
-`OpenSSL::Cipher::CipherError`が発生していることがわかった。
+`OpenSSL::Cipher::CipherError`が発生していることがみてとれる
   
 
 ## なぜエラーが起きたのか
@@ -112,7 +112,7 @@ ERROR: 1
 - しかし、鍵が存在しない場合は勝手に鍵を生成して、<br>
 `config/master.key`に鍵情報を新規作成し保存する。<br>
 
-### ❐ActiveSupport::MessageEncryptor::InvalidMessage (ActiveSupport::MessageEncryptor::InvalidMessage)の意味
+### ❐ActiveSupport::MessageEncryptor::InvalidMessage
 - 新しく生成した鍵が既存の`credentials.yml.erc`に対応していないということを知らせるエラー。
 
 ## 解決方法1. 
@@ -122,8 +122,12 @@ ERROR: 1
 $ export RAILS_MASTER_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 ## 解決方法2.
-- rails new した環境の config/master.key の中身をコピーして，本番サーバーの config/master.key に持ってくる
-
+既存のcredential.yml.ercに接続したい場合は、<br>
+以前共有されたマスターキーをもとに、config/master.keyファイルを作成し、その後<br>
+```
+$ docker-compose run -e EDITOR=vim app rails credentials:edit
+```
+を打てば`credentials.yml.enc`の復号化できる
 
 # 参考情報
 - [EDITOR=vi rails credentials:editするもCouldn't decrypt config/credentials.yml.enc. Perhaps you passed the wrong key?と言われる](https://qiita.com/zenfumi/items/4a7cbab59f0f7ede0d6e)
